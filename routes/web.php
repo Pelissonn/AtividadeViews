@@ -7,6 +7,8 @@ use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PerfilController;
+use App\Http\Controllers\AlbumController;
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -65,3 +67,5 @@ Route::get('/create-test-album', function () {
 Route::get('/albuns', function () {
     return Album::all();
 });
+
+Route::resource('albuns', AlbumController::class);
